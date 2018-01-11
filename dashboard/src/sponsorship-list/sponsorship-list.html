@@ -1,0 +1,27 @@
+<template>
+        
+        <div class="row"> 
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"><a href="#" click.delegate="sortToggle('id')">#</a></th>
+                        <th scope="col"><a href="#" click.delegate="sortToggle('sponsoree')">Sponsoree</a></th>
+                        <th scope="col"><a href="#" click.delegate="sortToggle('event')">Event</a></th>
+                        <th scope="col"><a href="#" click.delegate="sortToggle('eventStartDate')">Start date</a></th>
+                        <th scope="col"><a href="#" click.delegate="sortToggle('eventEndDate')">End date</a></th>
+                        <th scope="col"><a href="#" click.delegate="sortToggle('contractPrice')">Contract price</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr repeat.for="sponsorship of sponsorships | filter:searchTerm:filterFunc | sort: sortProperty:sortOrder">
+                            <th scope="row">${sponsorship.id}</th>
+                            <td>${sponsorship.sponsoree}</td>
+                            <td>${sponsorship.event}</td>
+                            <td>${sponsorship.eventStartDate}</td>
+                            <td>${sponsorship.eventEndDate}</td>
+                            <td>${sponsorship.contractPrice}</td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+<template>

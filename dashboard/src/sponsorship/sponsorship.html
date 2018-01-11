@@ -1,0 +1,30 @@
+<template>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="sponsoree">Sponsoree</label>
+                <input type="text" class="form-control" id="sponsoree" placeholder="type your sponsoree" value.bind="sponsorship.sponsoree">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="event">Event</label>
+                <input type="text" class="form-control" id="event" placeholder="type your event" value.bind="sponsorship.event">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="startDate">Start date</label>
+                <input type="date" class="form-control" id="startDate" value.bind="sponsorship.eventStartDate">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="endDate">End date</label>
+                <input type="date" class="form-control" id="endDate" value.bind="sponsorship.eventEndDate">
+            </div>
+        </div>
+        <div class="form-group">
+                <label for="contractPrice">Contract price</label>
+                <input type="number" class="form-control" id="contractPrice" min="100" step="1" value.bind="sponsorship.contractPrice">
+        </div>
+        
+        <button type="button" class="btn btn-primary" click.delegate="save()" disabled.bind="!canSave">Add</button>
+    </form>
+</template>
